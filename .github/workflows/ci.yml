@@ -45,11 +45,12 @@ jobs:
       run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         file: ./coverage.out
         flags: unittests
         name: codecov-umbrella
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Check test coverage
       run: |
@@ -112,7 +113,7 @@ jobs:
       run: go build -v -o markdown-viewer-editor${{ runner.os == 'Windows' && '.exe' || '' }} .
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: markdown-viewer-editor-${{ matrix.os }}
         path: markdown-viewer-editor${{ runner.os == 'Windows' && '.exe' || '' }}
