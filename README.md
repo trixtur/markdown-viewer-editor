@@ -61,6 +61,10 @@ The application uses Fyne's widget system to create a split-pane interface with:
 - Markdown editor (center-left)
 - Live preview (center-right)
 
+## Screenshot
+<img width="1208" height="833" alt="markdown-editor" src="https://github.com/user-attachments/assets/e4e33e90-e380-4a2a-b30c-4164e30dac5f" />
+
+
 ## License
 
 MIT
